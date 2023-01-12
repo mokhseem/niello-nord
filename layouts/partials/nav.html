@@ -6,12 +6,12 @@
         <a href="{{ .URL }}" class="{{ if eq $currentPage .URL }} {{ $inNav = 1 }}current{{ end}}">{{ .Name }}</a>
         {{ end }}
         {{ if eq $inNav 0 }}
-        <a href="javascript:void(0);" class="current">ARTICLE</a>
+        <a href="javascript:void(0);" class="current">опус</a>
         {{ end }}
     {{ else if eq .IsHome true }}
-    <a href="/" class="current">HOME</a>
+    <a href="/" class="current">откровения</a>
     {{ else }}
-    <a href="/" class="">HOME</a>
-    <a href="javascript:void(0);" class="current">ARTICLE</a>
+    <a href="/" class="">откровения</a>
+    <a href="javascript:void(0);" class="current">опус</a>
     {{ end }}
 </div>

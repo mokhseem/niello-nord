@@ -10,7 +10,6 @@
 
   <!-- Add your site or application content here -->
     <div class="flex-column">
-        {{ partial "banner.html" . }}
         <div class="home">
             <div class="logo">
                 <h1><a href="/">{{.Title}}</a></h1>
@@ -21,11 +20,10 @@
                 <article>
 					<h3><span class="listarrow">&#10132; <a href="{{ .RelPermalink }}">{{ .Title }}</a><span></h3>
                     <div class="less">
-                        <time>Published: {{ .PublishDate.Format "Monday, Jan 2, 2006" }}</time>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{ .ReadingTime }} minute read
-                    </div>
+                        <time>обнародовано: {{ .PublishDate.Format "02.01.06" }}</time>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;читать {{ .ReadingTime }} мин.</div>
                     <div class="em">{{ .Summary }}</div>
                     {{ if .Truncated }}
-                    <small><a href="{{ .RelPermalink }}">Read More &gt;&gt;</a></small>
+                    <small><a href="{{ .RelPermalink }}">читать далее &gt;&gt;</a></small>
                     {{ else }}
                     <small><a href="javascript:;"></a></small>
                     {{ end }}
@@ -34,18 +32,16 @@
             </div>
             <div class="pages">
                 {{ if .Paginator.HasPrev }}
-                <a href="{{ .Paginator.Prev.URL }}">&lt;&lt; Previous </a>&nbsp;|&nbsp;
+                <a href="{{ .Paginator.Prev.URL }}">&lt;&lt; ушедшая </a>&nbsp;|&nbsp;
                 {{ end }}
-                Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }} 
+                страница {{ .Paginator.PageNumber }} из {{ .Paginator.TotalPages }} 
                 {{ if .Paginator.HasNext }}&nbsp;|&nbsp;
-                <a href="{{ .Paginator.Next.URL }}">Next &gt;&gt;</a>
+                <a href="{{ .Paginator.Next.URL }}">грядущая &gt;&gt;</a>
                 {{ end }}
             </div>
             <div class="line-dotted"></div>
             {{ partial "footer.html" . }}
         </div>
-        {{ partial "banner.html" . }}
-		{{- partial "cookie.html" . -}}
     </div>
 
 

@@ -10,7 +10,6 @@
 
   <!-- Add your site or application content here -->
     <div class="flex-column">
-        {{ partial "banner.html" . }}
         <div class="home">
             <div class="logo">
                 <h1><a href="/">{{.Site.Title}}</a></h1>
@@ -20,9 +19,9 @@
                 <article>
                     <h3>{{ .Title }}</h3>
                     <div class="less">
-                        <time>Published: {{ .PublishDate.Format "Monday, Jan 2, 2006" }}</time>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{ .ReadingTime }} minute read&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Using {{ .WordCount }} words
+                        <time>обнародовано: {{ .PublishDate.Format "02.01.06 в 15:04" }}</time>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;читать {{ .ReadingTime }} мин.&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;исторгнуто {{ .WordCount }} сл.
 						<div class="tag-single">
-							<time>Tags:&nbsp;</time>
+							<time>бирки:&nbsp;</time>
 							<ul>
 								{{ range (.GetTerms "tags") }}
 								<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
@@ -33,7 +32,7 @@
                     <div class="em">{{ .Content | safeHTML }}</div>
                     <br />
                     <br />
-                    <div class="less">Page link: <a href="{{ .RelPermalink }}" class="pagelink">{{ .RelPermalink }}</a></div>
+                    <div class="less">ссылка: <a href="{{ .RelPermalink }}" class="pagelink">{{ .RelPermalink }}</a></div>
                     <div class="line-dotted"></div>
                 <article>
 				{{ if gt (len .Site.DisqusShortname) 2 }}
@@ -42,7 +41,6 @@
             </div>
             {{ partial "footer.html" . }}
         </div>
-        {{ partial "banner.html" . }}
     </div>
 
   {{ partial "foot.html" . }}
