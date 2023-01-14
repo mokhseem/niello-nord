@@ -88,8 +88,8 @@ small > a {
 }
 
 small > a:hover {
-  color: #ffba08;
-  background-color: #000000;
+  color: #17bc00;
+  background-color: transparent;
 }
 
 .em {
